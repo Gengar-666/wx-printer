@@ -2,9 +2,9 @@
 >微信小程序连接热敏打印机打印标签
 
 ## 使用
-该项目是在Taro3项目中编写，如需在其他小程序框架项目中使用，请自行修改
-使用的打印机型号为汉印HM-A300，打印指令为CPCL指令
-具体使用方法请至example页面查看
+该项目是在Taro3项目中编写，如需在其他小程序框架项目中使用，请自行修改<br>
+使用的打印机型号为汉印HM-A300，打印指令为CPCL指令<br>
+具体使用方法请至example页面查看<br>
 
 ``` js
 import BleConnector, { DeviceInfo } from '@/utils/bleConnector'
