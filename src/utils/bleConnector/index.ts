@@ -204,7 +204,7 @@ class BleConnector {
   }
 
   /**
-   * 写入二进制数据
+   * 写入buffer数据
    * @param buffer 
    */
   public write = (buffer: ArrayBuffer) => {
@@ -282,7 +282,7 @@ class BleConnector {
         }
       })
 
-      let scanEvent = this[_LISTEN_EVENTS].find(i => i.event === 'onScanChange')
+      let scanEvent = this[_LISTEN_EVENTS].find(i => i.event === BLE_SCAN_CHANGE)
       scanEvent && scanEvent.cb && scanEvent.cb(this.devices)
     })
   }
@@ -290,7 +290,7 @@ class BleConnector {
   private [BLE_ADAPTER_STATE_CHANGE] = () => {
     wx.onBluetoothAdapterStateChange(res => {
       this.adapterIsOpen = res.available
-      let adapterEvent = this[_LISTEN_EVENTS].find(i => i.event === 'onAdapterStateChange')
+      let adapterEvent = this[_LISTEN_EVENTS].find(i => i.event === BLE_ADAPTER_STATE_CHANGE)
       adapterEvent && adapterEvent.cb && adapterEvent.cb(this.adapterIsOpen)
     })
   }
@@ -298,7 +298,7 @@ class BleConnector {
   private [BLE_CONNECT_CHANGE] = () => {
     wx.onBLEConnectionStateChange(res => {
       this.connected = res.connected
-      let connectEvent = this[_LISTEN_EVENTS].find(i => i.event === 'onConnectChange')
+      let connectEvent = this[_LISTEN_EVENTS].find(i => i.event === BLE_CONNECT_CHANGE)
       connectEvent && connectEvent.cb && connectEvent.cb(this.connected)
     })
   }
