@@ -225,7 +225,7 @@ class BleConnector {
         }), j * delay);
       }
     } else {
-      console.log('⚠️⚠️⚠️ 设备未连接不支持或不支持写入')
+      console.log('⚠️⚠️⚠️ 设备未连接或不支持写入')
     }
   }
 

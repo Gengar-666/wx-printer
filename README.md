@@ -34,9 +34,9 @@ bleConnector.listen('onConnectChange', res => {
 })
 
 // 移除监听事件
-bleConnector.remove('onAdapterStateChange')
-bleConnector.remove('onScanChange')
-bleConnector.remove('onConnectChange')
+bleConnector.removeListen('onAdapterStateChange')
+bleConnector.removeListen('onScanChange')
+bleConnector.removeListen('onConnectChange')
 
 // 扫描设备
 bleConnector.scanDevices()
